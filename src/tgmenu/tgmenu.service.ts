@@ -37,21 +37,16 @@ export class TgmenuService {
         ctx.scene.session.itemparam = ctx.scene.session.itemparam
           ? ctx.scene.session.itemparam
           : ({} as SessionMenuItem);
-        // ctx.scene.session.itemId = ctx.scene.session.itemId
-        //   ? ctx.scene.session.itemId
-        //   : MAIN_MENU_ITEM_ID;
         ctx.scene.session.itemparam.id = ctx.scene.session.itemparam.id
           ? ctx.scene.session.itemparam.id
           : MAIN_MENU_ITEM_ID;
         ctx.scene.session.itemparam.name = ctx.scene.session.itemparam.name
           ? ctx.scene.session.itemparam.name
-          : MAIN_MENU_ITEM_ID;
-        // ctx.scene.session.itemName = ctx.scene.session.itemName
-        //   ? ctx.scene.session.itemName
-        //   : MAIN_MENU_ITEM_NAME;
+          : MAIN_MENU_ITEM_NAME;
         const chosenMenuItems = mi.filter((item) => {
           return item.parent_id == Number(ctx.scene.session.itemparam.id);
         });
+        // добавление кнопки отмены и кнопок возврата для вложенных меню
         if (ctx.scene.session.itemparam.id !== MAIN_MENU_ITEM_ID) {
           chosenMenuItems.push({
             id: mi.find((mnItem) => {
@@ -84,7 +79,6 @@ export class TgmenuService {
       ctx.scene.session.itemparam.id = (ctx.callbackQuery as extCBQuery).data;
       switch (ctx.scene.session.itemparam.id) {
         case MAIN_MENU_ITEM_ID:
-          ctx.scene.session.itemparam.name = MAIN_MENU_ITEM_NAME;
           ctx.scene.session.itemparam.name = MAIN_MENU_ITEM_NAME;
           break;
         case CANCEL_MENU_ITEM_ID:

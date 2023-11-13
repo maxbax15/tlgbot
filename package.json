@@ -4,7 +4,7 @@
   "description": "telegram bot menu demo",
   "author": "Maxim Bachrach",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
