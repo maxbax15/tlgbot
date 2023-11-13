@@ -1,7 +1,7 @@
 # compiled output
 /dist
 /node_modules
-/bot_token
+/src/bot_token
 /test
 
 # Logs
